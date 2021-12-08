@@ -65,7 +65,7 @@ class _DemoAppState extends State<DemoApp> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Pomodoro Timer'),
+        title: Text('Menu'),
         centerTitle: true,
       ),
       body: Container(

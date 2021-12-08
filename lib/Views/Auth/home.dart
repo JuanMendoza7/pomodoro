@@ -4,6 +4,7 @@ import 'package:flutter_circular_timer/Models/info.dart';
 import 'package:flutter_circular_timer/Services/api_service.dart';
 import 'package:flutter_circular_timer/Widgets/books_list.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../timer.dart';
 import '../create.dart';
 import 'login.dart';
 
@@ -59,6 +60,18 @@ class _HomeState extends State<Home> {
                 },
                 child: const Text(
                   'Logout',
+                  style: TextStyle(color: Colors.white),
+                )),
+            TextButton(
+                onPressed: () {
+                  prefs.clear();
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => Timer()),
+                      (Route<dynamic> route) => false);
+                },
+                child: const Text(
+                  'Timer',
                   style: TextStyle(color: Colors.white),
                 ))
           ],

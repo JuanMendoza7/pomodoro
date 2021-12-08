@@ -14,7 +14,7 @@ class Timer extends StatefulWidget {
 }
 
 class _TimerState extends State<Timer> {
-  int _duration = 2500;
+  int _duration = 5;
   bool _isPause = false;
   CountDownController _controller = CountDownController();
 
@@ -71,11 +71,13 @@ class _TimerState extends State<Timer> {
               ),
             ),
             FloatingActionButton.extended(
+                heroTag: "restart",
                 onPressed: () => _controller.restart(duration: _duration),
                 label: Text('restart work timer'),
                 icon: Icon(Icons.restart_alt)),
             SizedBox(height: 10),
             FloatingActionButton.extended(
+              heroTag: "Resume",
               onPressed: () {
                 setState(() {
                   if (_isPause) {
@@ -96,11 +98,13 @@ class _TimerState extends State<Timer> {
             ),
             SizedBox(height: 10),
             FloatingActionButton.extended(
+                heroTag: "Descanso",
                 onPressed: () => _controller.restart(duration: 300),
                 label: Text('rest'),
                 icon: Icon(Icons.hourglass_empty_sharp)),
             SizedBox(height: 10),
             FloatingActionButton.extended(
+                heroTag: "menu",
                 onPressed: () => {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => DemoApp()))
