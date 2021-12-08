@@ -12,7 +12,6 @@ class Home extends StatefulWidget {
 
   @override
   _HomeState createState() => _HomeState();
-  
 }
 
 class _HomeState extends State<Home> {
@@ -42,12 +41,12 @@ class _HomeState extends State<Home> {
           (Route<dynamic> route) => false);
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Pomodoro App'),
-          
           actions: [
             TextButton(
                 onPressed: () {
@@ -57,7 +56,6 @@ class _HomeState extends State<Home> {
                       MaterialPageRoute(
                           builder: (context) => const LoginPage()),
                       (Route<dynamic> route) => false);
-                      
                 },
                 child: const Text(
                   'Logout',
@@ -74,10 +72,8 @@ class _HomeState extends State<Home> {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const CreatePage()));
           },
-          label: const Text('Add Book'),
+          label: const Text('Agregar Tarea'),
           icon: const Icon(Icons.add),
-          
         ));
-        
   }
 }

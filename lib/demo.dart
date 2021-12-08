@@ -38,7 +38,7 @@ class _DemoAppState extends State<DemoApp> {
   // bool _isPause = false;
   late SharedPreferences prefs;
   late Future<List<Info>> info;
-  
+
   ApiService apiService = ApiService();
   SharedPreferences? sharedPreferences;
 
@@ -64,7 +64,7 @@ class _DemoAppState extends State<DemoApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor : Colors.red,
+        backgroundColor: Colors.red,
         title: Text('Pomodoro Timer'),
         centerTitle: true,
       ),
@@ -73,90 +73,89 @@ class _DemoAppState extends State<DemoApp> {
         child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             children: [
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const CalRoute()));
-                  },
-                  child: const Text("Calendario"),
-                  style: ElevatedButton.styleFrom(primary: Colors.red.shade900),
-                  ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Timer()));
-                  },
-                  child: const Text("Comenzar"),
-                  style: ElevatedButton.styleFrom(primary: Colors.red.shade900),
-                  ),
+              const Icon(Icons.menu_book_outlined, size: 200),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
+                  Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),
-                      (Route<dynamic> route) => false);},
-                       child: const Text("Lista de tareas"),
-                  style: ElevatedButton.styleFrom(primary: Colors.red.shade900),),
-                  ElevatedButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const CreatePage()));
-          },
-          child: const Text('Agregrar Tarea'),
-          
-        ),
-        
-      
-        ]),
+                      MaterialPageRoute(
+                          builder: (context) => const CalRoute()));
+                },
+                child: const Text("Calendario"),
+                style: ElevatedButton.styleFrom(primary: Colors.red.shade900),
+              ),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()));
+                },
+                child: const Text("Tareas realizadas"),
+                style: ElevatedButton.styleFrom(primary: Colors.red),
+              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) => const CreatePage()));
+              //   },
+              //   child: const Text('Agregrar Tarea'),
+              // ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Timer()));
+                },
+                child: const Text("Volver a reloj"),
+                style: ElevatedButton.styleFrom(primary: Colors.red.shade900),
+              ),
+            ]),
       ),
     );
   }
-
-
 }
 
 // ignore: must_be_immutable
 // class SecondRoute extends StatelessWidget {
-  // SecondRoute({Key? key}) : super(key: key);
+// SecondRoute({Key? key}) : super(key: key);
 
-  // TextEditingController idController = TextEditingController();
-  // TextEditingController namController = TextEditingController();
-  // TextEditingController tarController = TextEditingController();
-  // ApiService apiService = ApiService();
-  // SharedPreferences? sharedPreferences;
+// TextEditingController idController = TextEditingController();
+// TextEditingController namController = TextEditingController();
+// TextEditingController tarController = TextEditingController();
+// ApiService apiService = ApiService();
+// SharedPreferences? sharedPreferences;
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: const Text('Información mostrada'),
-  //       centerTitle: true,
-  //     ),
-  //     body: ListView(
-  //       padding: const EdgeInsets.symmetric(horizontal: 10.0),
-  //       children: [
-  //         Column(
-  //           children: [
-  //             const SizedBox(
-  //               height: 30.0,
-  //             ),
-              
-  //             ElevatedButton(
-  //               onPressed: () {
-  //                 Navigator.push(context,
-  //                     MaterialPageRoute(builder: (context) => MyApp()));
-  //               },
-  //               child: const Text("Volver"),
-  //               style: ElevatedButton.styleFrom(primary: Colors.red),
-  //             ),
-  //           ],
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
+// @override
+// Widget build(BuildContext context) {
+//   return Scaffold(
+//     appBar: AppBar(
+//       title: const Text('Información mostrada'),
+//       centerTitle: true,
+//     ),
+//     body: ListView(
+//       padding: const EdgeInsets.symmetric(horizontal: 10.0),
+//       children: [
+//         Column(
+//           children: [
+//             const SizedBox(
+//               height: 30.0,
+//             ),
+
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(context,
+//                     MaterialPageRoute(builder: (context) => MyApp()));
+//               },
+//               child: const Text("Volver"),
+//               style: ElevatedButton.styleFrom(primary: Colors.red),
+//             ),
+//           ],
+//         ),
+//       ],
+//     ),
+//   );
+// }
 
 //   getData(
 //     List<Info> data,

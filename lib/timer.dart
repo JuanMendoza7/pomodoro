@@ -14,7 +14,7 @@ class Timer extends StatefulWidget {
 }
 
 class _TimerState extends State<Timer> {
-  int _duration = 5;
+  int _duration = 2500;
   bool _isPause = false;
   CountDownController _controller = CountDownController();
 
@@ -26,7 +26,6 @@ class _TimerState extends State<Timer> {
         centerTitle: true,
       ),
       body: Container(
-        
         color: Colors.white,
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -59,14 +58,15 @@ class _TimerState extends State<Timer> {
                             isCloseButton: true,
                             isButtonVisible: false,
                             titleStyle: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 30.0,
                             ),
                           ),
                           type: AlertType.success)
                       .show();
                 },
-                textStyle: TextStyle(fontSize: 50.0, color: Colors.red.shade900),
+                textStyle:
+                    TextStyle(fontSize: 50.0, color: Colors.red.shade900),
                 ringColor: Colors.red,
               ),
             ),
@@ -98,24 +98,19 @@ class _TimerState extends State<Timer> {
             FloatingActionButton.extended(
                 onPressed: () => _controller.restart(duration: 300),
                 label: Text('rest'),
-                icon: Icon(Icons.restaurant)),
+                icon: Icon(Icons.hourglass_empty_sharp)),
             SizedBox(height: 10),
             FloatingActionButton.extended(
                 onPressed: () => {
-                  Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                         DemoApp()))
-                },
-                label: Text('rest'),
-                icon: Icon(Icons.restaurant)),
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => DemoApp()))
+                    },
+                label: Text('menu'),
+                icon: Icon(Icons.menu_book_outlined)),
             SizedBox(height: 10),
-
           ],
         ),
       ),
-
     );
   }
 }

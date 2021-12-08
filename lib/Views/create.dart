@@ -29,7 +29,7 @@ class _CreatePageState extends State<CreatePage> {
           child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         children: [
-          const Icon(Icons.app_registration_rounded, size: 200),
+          const Icon(Icons.info, size: 200),
           TextFormField(
             controller: idController,
             decoration: const InputDecoration(

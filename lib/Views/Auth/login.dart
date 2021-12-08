@@ -39,7 +39,8 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => Timer()),
-            (Route<dynamic> route) => false); }
+            (Route<dynamic> route) => false);
+      }
     } else {
       _alert('Login Error', 'Mensaje de error');
     }
@@ -100,9 +101,9 @@ class _LoginPageState extends State<LoginPage> {
                               child: const Text(
                                 'Login',
                               ),
-                  style: ElevatedButton.styleFrom(primary: Colors.red.shade600))),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.red.shade600))),
                       TextButton(
-                        
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -110,8 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                                     builder: (context) =>
                                         const RegisterPage()));
                           },
-                          child: const Text('Register user'),
-                          style: ElevatedButton.styleFrom(primary: Colors.red.shade900))
+                          child: const Text('Register user')),
                     ],
                   ),
           ),

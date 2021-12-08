@@ -42,7 +42,8 @@ class _RegisterPageState extends State<RegisterPage> {
             (Route<dynamic> route) => false);
       }
     } else {
-      _alert('Register Error', 'Mensaje de error: ' + response.statusCode.toString());
+      _alert('Register Error',
+          'Mensaje de error: ' + response.statusCode.toString());
     }
     setState(() {
       _isLoading = false;
@@ -75,12 +76,12 @@ class _RegisterPageState extends State<RegisterPage> {
                 ? const Center(child: CircularProgressIndicator())
                 : ListView(
                     children: [
-                      new Image.asset(
-                            'https://www.kindpng.com/picc/m/492-4923449_short-discussions-with-parenting-and-child-development-libro.png',
-                          width: 80.0,
-                          height: 100.0, 
-                          ),
-                       const Icon(Icons.app_registration_rounded, size: 200),
+                      // new Image.asset(
+                      //       'https://www.kindpng.com/picc/m/492-4923449_short-discussions-with-parenting-and-child-development-libro.png',
+                      //     width: 80.0,
+                      //     height: 100.0,
+                      //     ),
+                      const Icon(Icons.new_label, size: 200),
                       TextFormField(
                         controller: userController,
                         decoration: const InputDecoration(
